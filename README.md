@@ -1,1 +1,0 @@
-# us-county-elected-officials
