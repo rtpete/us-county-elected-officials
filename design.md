@@ -98,7 +98,7 @@ A person who has held offices in multiple counties will have multiple `terms` ro
 | `source_type` | TEXT | `api`, `scrape`, `llm`, `spreadsheet`, `manual` |
 | `source_url` | TEXT | Specific URL fetched or file path; nullable for manual entries |
 | `reliability_tier` | SMALLINT | 1 (highest) to 3 (lowest); manual = 0 (unverified) |
-| `raw_data` | JSONB | Full original payload — API JSON response, scraped HTML excerpt, LLM output, spreadsheet row |
+| `raw_data` | JSONB | Full original payload — API JSON response, scraped markdown content, LLM output, spreadsheet row |
 | `confidence_score` | NUMERIC(3,2) | Source-level confidence; feeds `terms.confidence_score` |
 | `llm_extracted` | BOOLEAN | True when LLM was used to parse the raw content |
 | `fetched_at` | TIMESTAMPTZ | When this record was collected |
@@ -123,19 +123,17 @@ State-level sources offer high engineering return on investment because one scra
 
 - **State Secretary of State & Election Boards**: SOS websites can publish rosters for constitutional offices like Sheriff, Clerk, and Treasurer.
 - **State Associations of Counties**: Maintain member directories with administrative contacts, often more current than official government sources.
-- **State Open Data Portals** (e.g., Washington, Colorado): Publish machine-readable official directories where available — worth checking before building a scraper.
+- **State Open Data Portals** (e.g., Washington, Colorado): Publish machine-readable official directories where available.
 
 ### Tier 3 — County-Level Data
 
-**USA.gov** has a Local Governments page linking to some state-level pages which contain data on county officials. Most of these contain a "Government" section. This would be the primary path for data collection: Navigate from USA.gov down to the county level and use an LLM scraper to pull the data from each HTML page. County sites are the most authoritative, but least cooperative so they would be the main target for LLM extraction (see Section 3).
-
-> **Note:** USA.gov's local government links are incomplete — many point to state-level pages rather than individual county sites, and rural county coverage is thin. It is a useful starting point but should not be relied on as a complete navigation path to all 3,143 counties. Where USA.gov links fall short, the state Association of Counties directory or the state Secretary of State website is the better entry point for navigating to individual county pages.
+- **Local County Websites**: USA.gov has a Local Governments page linking to state -> county-level pages which contain data on county officials. Most of these contain a "Government" section. This would be the primary path for data collection: Navigate from USA.gov down to the county level and use an LLM scraper to pull the data from each HTML page. County sites are the most authoritative, but least cooperative so they would be the main target for LLM extraction (see Section 3). Where USA.gov links fall short, the state Association of Counties directory or the state Secretary of State website is the better entry point for navigating to individual county pages.
 
 ### Tier 4 — Legacy Data and Manual Research
 
 If the automated solution fails for a given county, we can fall back to historical records and manual research.
 
-- **Historical Spreadsheets**: There are reportedly spreadsheets containing some amount of this data which exist today. That data could be quite useful in populating the database as well as potentially providing additional sources.
+- **Historical Spreadsheets**: If there are legacy spreadsheets, files or databases containing some amount of this data today, that data could be quite useful in populating the database as well as potentially providing additional sources.
 
 - **Manual Research and Outreach**: Analog collection methods could be leveraged for any counties which cannot have their data populated through other means. Collection methods include searching local newspapers or reaching out to county offices via phone or email. If manual outreach is performed, attempts should be made to find out term limits and establish a timeframe for necessary manual data refresh in the future. Additionally, requests could be made to have that local government website updated.
 
@@ -155,9 +153,9 @@ Applied in priority order when choosing which source to trust for a given local 
 
 ### LLM-First Design Rationale
 
-Creating and maintaining web scrapers for 3,143 different county websites is a daunting task. Each HTML page differs enough from another that thousands of bespoke parsing solutions would be required for successful data retrieval. LLMs have massive leverage in this space in 2026.
+Creating and maintaining web scrapers for 3,143 different county websites is a daunting task. Each HTML page differs enough from another that thousands of bespoke parsing solutions would be required for successful data retrieval. The combination of a unified scraper and an LLM eliminates that problem entirely.
 
-LLMs are not used for Tier 1 sources — those are structured API calls that return JSON directly. **Firecrawl** is used as the unified scraper for Tier 2 and Tier 3 web sources: it converts any URL to clean markdown before passing to the LLM for extraction, handles JavaScript-rendered pages and PDFs, and requires no per-site parsing rules. This eliminates the per-state scraper maintenance that a traditional BeautifulSoup approach would require. **Crawl4AI** is an open-source self-hosted alternative if avoiding external API costs is a priority.
+LLMs are not used for Tier 1 sources — those are structured API calls that return JSON directly. For Tier 2 and Tier 3 web sources, **Firecrawl** solves the *fetching* problem: it converts any URL to clean markdown, handling JavaScript-rendered pages and PDFs without per-site configuration. The **LLM** then solves the *parsing variability* problem: it reads whatever markdown Firecrawl returns and extracts structured data regardless of how each site is laid out, with no bespoke parsing rules required. Together they replace what would otherwise be thousands of site-specific scrapers. **Crawl4AI** is an open-source self-hosted alternative to Firecrawl if avoiding external API costs is a priority.
 
 ### Pipeline Overview
 
@@ -197,7 +195,7 @@ LLMs are not used for Tier 1 sources — those are structured API calls that ret
 
 ### LLM Extraction Layer
 
-Applied to Tier 2 state sites and Tier 3 county websites. Firecrawl fetches the target URL and converts it to clean markdown before the extraction prompt is sent, reducing token cost and handling JavaScript rendering automatically.
+Applied to Tier 2 state sites and Tier 3 county websites. **Claude** (via the Anthropic API) is the recommended model for extraction given its strong performance on structured output tasks. Firecrawl fetches the target URL and converts it to clean markdown before the extraction prompt is sent, reducing token cost and handling JavaScript rendering automatically.
 
 **Input:** Markdown converted from the target page + county name + state + list of expected office types for that county type.
 
@@ -225,9 +223,9 @@ Applied to Tier 2 state sites and Tier 3 county websites. Firecrawl fetches the 
 - Full LLM response stored in `source_records.raw_data` with `llm_extracted = true`
 - `confidence` from LLM response maps to `source_records.confidence_score`
 - Records below 0.7 confidence route to human review before writing to `terms`
-- The HTML excerpt is also stored so the extraction can be rerun with an improved prompt without re-fetching
+- The markdown content and full LLM response are stored in `raw_data` so the extraction can be rerun with an improved prompt without re-fetching
 
-**Cost management:** HTML is trimmed to the relevant body section before sending. For counties with no useful page content, skip LLM call and log the county as `needs_manual_review`.
+**Cost management:** Markdown content is trimmed to the relevant body section before sending. For counties with no useful page content, skip LLM call and log the county as `needs_manual_review`.
 
 
 ### Pipeline Technology
@@ -271,14 +269,24 @@ A `county_election_dates` lookup (maintainable separately, sourced from Ballotpe
 - **No known single source covers all 3,143 counties for all offices**: Gaps will exist at launch. The gap report (counties flagged `needs_manual_review`) is a feature, not a failure — it tells future analysts exactly where to focus.
 
 
+### With More Time
+
+- **Query documentation and analyst onboarding**: The five-table schema requires multi-table joins for most useful queries — a basic "who are the current officials in this county?" question touches four tables. A reference library of common named queries covering the most frequent use cases (contact lists by office type, terms expiring in a date range, gap reports) would lower the barrier significantly and double as onboarding material for new analysts.
+- **Presentation layer**: Build PostgreSQL views that pre-join `terms`, `officials`, `offices`, and `counties` into flat, analyst-friendly shapes. A `current_officials_flat` view would make the most common queries trivially simple (`SELECT * FROM current_officials_flat WHERE state = 'TX'`) and reduce the risk of join errors producing silent data quality issues. This sits in front of the normalized tables without replacing them.
+- **Stronger entity resolution**: Replace or supplement the `dedupe_hash` heuristic with a more robust approach — probabilistic name matching, external ID cross-referencing across `source_records`, or a human-review workflow specifically for flagged potential duplicates.
+- **Vacancy and appointment monitoring**: Build a targeted signal for mid-term changes beyond the election calendar. Local news feeds, county RSS feeds, or a lightweight alert on `is_current` age could surface interim appointments and resignations that monthly scrapes miss.
+- **Firecrawl redundancy**: Deploy and validate Crawl4AI as a self-hosted fallback so a Firecrawl outage does not halt the entire Tier 2 and Tier 3 pipeline.
+- **Automated data quality reporting**: A scheduled report surfacing records with low confidence scores, stale `last_verified_at` dates, and counties approaching the `needs_manual_review` threshold — so data quality problems are visible before a downstream consumer notices them.
+
 ### Open Questions for Murmuration
 
-- Is there an existing internal county reference table or FIPS registry to build from, or should this system be the canonical source?
-- Are there existing vendor relationships — Ballotpedia API access, a Cicero license — that change the Tier 1 source strategy?
-- **Firecrawl vs Crawl4AI**: Is the Firecrawl API budget acceptable at scale, or should Crawl4AI be evaluated as a self-hosted alternative to reduce ongoing cost?
-- **Dagster hosting**: Self-host Dagster or use Dagster Cloud? The answer affects infrastructure cost and operational overhead.
-- What downstream systems consume this data? The answer affects whether a REST API layer, a read replica, or direct Postgres access is the right interface.
-- Do the historical analyst spreadsheets have known collection dates? This determines whether they are safe to use for `is_current` or only for bootstrapping the offices/officials tables.
+- What downstream systems consume this data? 
+- Is there legacy data? If so, do we want to port that data over?
+- Is there an existing internal county reference table or FIPS registry to build from?
+- Are there existing vendor relationships such as Ballotpedia API access or a Cicero license?
+- Is the Firecrawl API budget acceptable at scale, or should Crawl4AI be evaluated as a self-hosted alternative to reduce ongoing cost?
+- Is there an existing Anthropic API relationship or credit budget that makes Claude the right choice for LLM extraction? Should alternative models be evaluated for cost or performance?
+
 
 ---
 
@@ -368,4 +376,4 @@ ORDER BY t.term_end, c.state_abbreviation, c.county_name;
 ## 6. AI Usage Note
 
 I used Gemini to conduct research on local government data collection methods and sources. I verified all suggested sources by navigating to their webpages and attempting to uncover the desired data. This process helped me to understand the shape and availability of data, and ruled many of the initial suggestions out. It also helped me to understand that the real challenge of this project is acquiring the data.
-I used Claude Code to create the document outline, generate a pipeline proposal and data models. I significantly altered the initial models suggested and reduced the table count from the initially proposed 8 to 5. Then, I took an iterative approach to asking questions, researching, and revising the document with Claude’s assistance. I requested numerous changes and additions over a period of 3 hours, spending roughly 5 hours in total on the assessment. I researched all technologies suggested by Claude by navigating to their product websites, Github repos, and online developer forums to gain understanding of pros and cons for each. I have written this section fully on my own and have edited every other section of this document to ensure it is in line with my standards of writing and design. 
+I used Claude Code to create the document outline, generate a pipeline proposal and data models. I significantly altered the initial models suggested and reduced the table count from the initially proposed 8 to 5. Then, I took an iterative approach to asking questions, researching, and revising the document with Claude’s assistance. I requested numerous changes and additions over a period of 5 hours. I researched all technologies suggested by Claude by navigating to their product websites, Github repos, and online developer forums to gain understanding of pros and cons for each. I have written this section fully on my own and have edited every other section of this document to ensure it is in line with my standards of writing and design. 
