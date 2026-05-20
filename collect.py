@@ -44,6 +44,7 @@ PARTISAN   = True   # WA county offices appear on partisan ballots
 
 DATA_DIR = Path("data")
 
+# Set headers to get around basic bot protections to receive full HTML
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -117,7 +118,18 @@ class Flag:
 # ── HTTP helper ───────────────────────────────────────────────────────────────
 
 def fetch(url: str, retries: int = 2) -> str:
-    """GET a URL with simple retry and a polite inter-request delay."""
+    """GET a URL with simple retry and a polite inter-request delay.
+
+    Args:
+        url: The URL to fetch.
+        retries: Number of additional attempts after the first failure (default 2).
+
+    Returns:
+        The response body as a decoded string.
+
+    Raises:
+        requests.RequestException: If all attempts fail.
+    """
     for attempt in range(retries + 1):
         try:
             r = requests.get(url, headers=HEADERS, timeout=15)
@@ -134,10 +146,14 @@ def fetch(url: str, retries: int = 2) -> str:
 # ── FIPS reference ─────────────────────────────────────────────────────────────
 
 def fetch_wa_fips() -> tuple[dict[str, str], dict[str, str]]:
-    """
-    Pull the Census county FIPS reference and return two dicts for WA:
-      name_to_fips  {"adams county" -> "53001"}  (lowercase key for matching)
-      fips_to_name  {"53001" -> "Adams County"}  (proper case for display)
+    """Pull the Census county FIPS reference file and extract Washington entries.
+
+    Returns:
+        Tuple of (name_to_fips, fips_to_name) where:
+          name_to_fips maps lowercase county name → 5-digit FIPS (e.g. "adams county" → "53001").
+            Lowercase keys allow case-insensitive matching against scraped source data.
+          fips_to_name maps 5-digit FIPS → proper-case county name (e.g. "53001" → "Adams County").
+            Used to populate the counties table with display-ready names.
     """
     log.info("Fetching WA FIPS reference from Census")
     name_to_fips: dict[str, str] = {}
@@ -157,7 +173,16 @@ def fetch_wa_fips() -> tuple[dict[str, str], dict[str, str]]:
 def resolve_fips(county_name: str, name_to_fips: dict[str, str]) -> Optional[str]:
     """Map a source county name to its 5-digit FIPS code (case-insensitive).
 
-    Tries the name as-is (lowercased), then with ' county' appended if missing.
+    Tries the name as-is (lowercased), then with ' county' appended if not already present.
+    This handles sources that omit the word "County" (e.g. "Adams" vs "Adams County").
+
+    Args:
+        county_name: Raw county name from the scraped source (e.g. "Adams County" or "Adams").
+        name_to_fips: Lowercase-keyed lookup dict from fetch_wa_fips().
+
+    Returns:
+        5-digit FIPS string (e.g. "53001"), or None if no match is found.
+        A None return triggers an UNRESOLVED_COUNTY validation flag downstream.
     """
     n = county_name.lower().strip()
     if n in name_to_fips:
@@ -172,8 +197,7 @@ def resolve_fips(county_name: str, name_to_fips: dict[str, str]) -> Optional[str
 # ── Scrapers ──────────────────────────────────────────────────────────────────
 
 def scrape_waco() -> list[RawOfficial]:
-    """
-    Scrape the WACO member directory.
+    """Scrape the WACO member directory for non-commissioner county offices.
 
     Page structure: div#CityDirectoryLeftMargin contains alternating children:
       div.DirectoryCategoryText  — county name (e.g. "Adams County")
@@ -182,6 +206,15 @@ def scrape_waco() -> list[RawOfficial]:
 
     The email column is present in the DOM but hidden via display:none and empty
     for all entries, so only phone data is available from this source.
+
+    Returns:
+        List of RawOfficial records, one per staff row across all 39 counties.
+        Covers sheriff, auditor, assessor, clerk, treasurer, prosecuting attorney,
+        and coroner/medical examiner. Does not include commissioners (see scrape_wsac).
+
+    Raises:
+        RuntimeError: If the expected page structure is not found, indicating the
+            site layout has changed and the parser needs to be updated.
     """
     log.info("Scraping WACO: %s", WACO_URL)
     soup = BeautifulSoup(fetch(WACO_URL), "lxml")
@@ -233,17 +266,28 @@ def scrape_waco() -> list[RawOfficial]:
                     },
                 ))
 
-    log.info("WACO: %d records from %d county sections", len(records),
-             sum(1 for r in records if r.source_name == "WACO Member Directory"))
+    log.info("WACO: %d records across %d counties", len(records),
+             len(set(r.county_name for r in records)))
     return records
 
 
 def scrape_wsac() -> list[RawOfficial]:
-    """
-    Scrape the WSAC member directory.
+    """Scrape the WSAC member directory for county commissioners and council members.
 
-    Single HTML table with header row:
+    Single HTML table with columns:
       County | District | Title | First Name | Last Name | Email
+
+    The table has duplicate header rows at both the first and last positions (a quirk
+    of the site's CMS), both of which are skipped. Email is present as a column but
+    empty for all entries; no phone data is available from this source.
+
+    Returns:
+        List of RawOfficial records, one per commissioner/council member row.
+        Names are recombined into "Last, First" format so parse_name() handles
+        them consistently with WACO records.
+
+    Raises:
+        RuntimeError: If no table is found on the page.
     """
     log.info("Scraping WSAC: %s", WSAC_URL)
     soup = BeautifulSoup(fetch(WSAC_URL), "lxml")
@@ -289,18 +333,25 @@ def scrape_wsac() -> list[RawOfficial]:
 # ── Normalization helpers ─────────────────────────────────────────────────────
 
 def parse_name(raw: str) -> tuple[str, str]:
-    """
-    Return (first_name, last_name) from a raw name string.
+    """Split a raw name string into (first_name, last_name).
 
-    Handles:
-      "Thurman, Brad"         → ("Brad",  "Thurman")
-      "Leach, D-ABMDI, Bill"  → ("Bill",  "Leach")   middle credential dropped
-      "Fusaro, MD, Aldo"      → ("Aldo",  "Fusaro")
-      "Van Pelt, Debra"       → ("Debra", "Van Pelt")
-      "John Smith"            → ("John",  "Smith")
+    When commas are present, the first token is treated as the last name and the
+    final token as the first name. Any middle tokens (credentials, suffixes) are
+    discarded. When no comma is present, splits on the last space.
 
-    When commas are present: first token = last name, last token = first name.
-    Any middle tokens (credentials, suffixes) are discarded.
+    Args:
+        raw: Name string exactly as scraped from the source.
+
+    Returns:
+        Tuple of (first_name, last_name). Either may be an empty string if the
+        input cannot be split (e.g. a single-token string with no spaces).
+
+    Examples:
+        "Thurman, Brad"         → ("Brad",  "Thurman")
+        "Leach, D-ABMDI, Bill"  → ("Bill",  "Leach")   middle credential dropped
+        "Fusaro, MD, Aldo"      → ("Aldo",  "Fusaro")
+        "Van Pelt, Debra"       → ("Debra", "Van Pelt")
+        "John Smith"            → ("John",  "Smith")
     """
     raw = raw.strip()
     if "," in raw:
@@ -312,12 +363,22 @@ def parse_name(raw: str) -> tuple[str, str]:
 
 
 def parse_title(title: str) -> tuple[Optional[str], str]:
-    """
-    Map a raw scraped title to (office_type, appointment_type).
+    """Map a raw scraped title to a canonical (office_type, appointment_type) pair.
 
     Strips "Acting " prefix and "- Interim" suffix before the OFFICE_TYPE_MAP lookup,
-    setting appointment_type to "interim" when either qualifier is present.
-    Returns (None, "elected") when the cleaned title is unrecognized.
+    setting appointment_type to "interim" when either qualifier is present. This keeps
+    interim officeholders in the same office row as their permanent counterparts while
+    correctly flagging their appointment status on the term.
+
+    Args:
+        title: Raw title string exactly as scraped (e.g. "Acting Coroner", "Councilor").
+
+    Returns:
+        Tuple of (office_type, appointment_type) where:
+          office_type is the canonical string from OFFICE_TYPE_MAP, or None if the
+            cleaned title is not recognized (triggers UNKNOWN_OFFICE_TYPE flag).
+          appointment_type is "interim" if an acting/interim qualifier was present,
+            otherwise "elected".
     """
     t = title.strip()
     appointment_type = "elected"
@@ -331,20 +392,46 @@ def parse_title(title: str) -> tuple[Optional[str], str]:
 
 
 def dedupe_hash(first: str, last: str, fips: str) -> str:
-    """20-char hex fingerprint on (lowercase last | lowercase first | fips).
+    """Compute a 20-character hex fingerprint used to deduplicate officials.
 
-    Catches re-ingestion of the same person from a second source for the same county.
-    Does not resolve cross-county moves or name changes (see design.md §1 for known limits).
+    Hash input is "{lowercase last}|{lowercase first}|{fips}". If the same person
+    arrives from a second source for the same county, their hash will match an
+    existing officials row and they will be linked rather than duplicated.
+
+    Known limits: does not detect the same person across counties, after a legal
+    name change, or when two different people share the same name in the same county.
+    See design.md §1 for a full discussion of deduplication tradeoffs.
+
+    Args:
+        first: Parsed first name (from parse_name).
+        last: Parsed last name (from parse_name).
+        fips: 5-digit county FIPS code (from resolve_fips).
+
+    Returns:
+        20-character hex string (first 20 chars of SHA-256).
     """
     raw = f"{last.lower().strip()}|{first.lower().strip()}|{fips}"
     return hashlib.sha256(raw.encode()).hexdigest()[:20]
 
 
 def score_confidence(first: str, last: str, phone: str, email: str) -> float:
-    """Assign a confidence score based on data completeness.
+    """Assign a confidence score based on data completeness only.
 
-    Source-level ceiling is 0.85 for a Tier 2 membership directory (not a government
-    primary source). Records missing a name receive 0.45 to force review queue routing.
+    Scores reflect whether the record has a parseable name and at least one contact
+    field. They do NOT account for source freshness, membership lag, or cross-
+    verification against a second source. The ceiling of 0.85 reflects the Tier 2
+    reliability of association membership directories vs. a primary government source.
+
+    Args:
+        first: Parsed first name (empty string if missing).
+        last: Parsed last name (empty string if missing).
+        phone: Phone string from source (empty string if absent).
+        email: Email string from source (empty string if absent).
+
+    Returns:
+        0.85 — full name present and at least one contact field present.
+        0.72 — full name present but no contact info (all WSAC commissioner records).
+        0.45 — name missing or unparseable; routes record to the review queue.
     """
     has_name    = bool(first.strip() and last.strip())
     has_contact = bool(phone.strip() or email.strip())
@@ -364,7 +451,22 @@ def validate_record(
     office_type: Optional[str],
     score: float,
 ) -> list[Flag]:
-    """Emit flags for data quality issues on a single record."""
+    """Check a single record for data quality issues and return any flags.
+
+    Args:
+        rec: The original RawOfficial, used for context fields (county, title, contact).
+        rec_id: UUID string to attach to any emitted flags for traceability.
+        first: Parsed first name from parse_name().
+        last: Parsed last name from parse_name().
+        fips: Resolved FIPS code from resolve_fips(), or None if resolution failed.
+        office_type: Normalized office type from parse_title(), or None if unrecognized.
+        score: Confidence score from score_confidence().
+
+    Returns:
+        List of Flag objects, one per issue detected. An empty list means the record
+        passed all checks. Possible flag types: MISSING_FIRST_NAME, MISSING_LAST_NAME,
+        NO_CONTACT_INFO, UNRESOLVED_COUNTY, UNKNOWN_OFFICE_TYPE, LOW_CONFIDENCE.
+    """
     flags: list[Flag] = []
     if not first.strip():
         flags.append(Flag(rec_id, "MISSING_FIRST_NAME", rec.raw_name))
@@ -392,13 +494,24 @@ def build_tables(
     fips_to_name: dict[str, str],
     fetch_time: datetime,
 ) -> tuple[list, list, list, list, list, list[Flag]]:
-    """
-    Transform raw scraped records into the 5-table schema from design.md.
+    """Transform raw scraped records into the 5-table schema from design.md.
 
     Counties are seeded from the FIPS reference (not from scraped data) so all
-    39 WA counties appear in the output even if a source omits one.
+    39 WA counties appear in the output even if a source omits one. A source_record
+    is always written for every raw row — including those that fail validation —
+    so the full raw payload is preserved for re-processing without re-fetching.
 
-    Returns: (counties, offices, officials, terms, source_records, flags)
+    Args:
+        raw_records: Combined list of RawOfficial records from scrape_waco() and scrape_wsac().
+        name_to_fips: Lowercase county name → FIPS lookup dict from fetch_wa_fips().
+        fips_to_name: FIPS → proper county name lookup dict from fetch_wa_fips().
+        fetch_time: UTC datetime recorded at run start; written to first_seen_at and
+            last_verified_at on all new term records.
+
+    Returns:
+        Tuple of (counties, offices, officials, terms, source_records, flags) where
+        each of the first five is a list of dicts ready for SQLite insertion, and
+        flags is a list of Flag objects written to validation_flags.csv.
     """
     counties_rows = [
         {
@@ -605,6 +718,20 @@ def write_sqlite(
     terms:    list,
     srecs:    list,
 ) -> None:
+    """Create the SQLite database and insert all five tables.
+
+    Deletes any existing file at db_path before writing so each run produces
+    a clean snapshot rather than appending to prior data.
+
+    Args:
+        db_path: Destination path for the .db file. Parent directory is created
+            if it does not exist.
+        counties: List of county dicts from build_tables().
+        offices: List of office dicts from build_tables().
+        officials: List of official dicts from build_tables().
+        terms: List of term dicts from build_tables().
+        srecs: List of source_record dicts from build_tables().
+    """
     log.info("Writing SQLite: %s", db_path)
     db_path.parent.mkdir(exist_ok=True)
     db_path.unlink(missing_ok=True)
@@ -635,11 +762,16 @@ def write_sqlite(
 
 
 def write_flat_csv(db_path: Path, csv_path: Path) -> None:
-    """
-    Export a flat current_officials_flat view to CSV.
+    """Export a flat current-officials view to CSV.
 
-    Pre-joins all five tables so analysts can work directly with the CSV
-    without needing to understand the normalized schema.
+    Queries the SQLite database and pre-joins all five tables into a single
+    denormalized result. This lets analysts work directly with the CSV without
+    needing to understand the normalized schema or write JOIN queries.
+    Only includes records where is_current = 1.
+
+    Args:
+        db_path: Path to the SQLite database written by write_sqlite().
+        csv_path: Destination path for the output CSV file.
     """
     con = sqlite3.connect(db_path)
     df = pd.read_sql_query(
@@ -679,6 +811,17 @@ def write_flat_csv(db_path: Path, csv_path: Path) -> None:
 
 
 def write_flags_csv(flags: list[Flag], path: Path) -> None:
+    """Write validation flags to a CSV file with columns: record_id, flag_type, detail.
+
+    Separating flags into their own file means data quality issues are visible
+    without querying the database, and a downstream reviewer can work through
+    them independently of the main dataset.
+
+    Args:
+        flags: List of Flag objects from build_tables().
+        path: Destination path for the output CSV. Parent directory is created
+            if it does not exist.
+    """
     path.parent.mkdir(exist_ok=True)
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
@@ -690,11 +833,19 @@ def write_flags_csv(flags: list[Flag], path: Path) -> None:
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
+    """Orchestrate the full collection pipeline and write all output files."""
     fetch_time = datetime.now(timezone.utc)
 
+    # Step 1: Pull the Census FIPS reference to map county names → 5-digit FIPS codes.
+    # These codes are the geographic primary key used throughout the schema.
     name_to_fips, fips_to_name = fetch_wa_fips()
+
+    # Step 2: Scrape both source directories and combine into a single list of raw records.
+    # WACO covers 7 non-commissioner offices; WSAC covers commissioners and council members.
     raw = scrape_waco() + scrape_wsac()
 
+    # Step 3: Transform raw records into the 5-table schema — normalize titles, parse names,
+    # resolve FIPS, deduplicate officials, and emit validation flags for suspicious records.
     counties, offices, officials, terms, srecs, flags = build_tables(
         raw, name_to_fips, fips_to_name, fetch_time
     )
@@ -703,8 +854,11 @@ def main() -> None:
     csv_path   = DATA_DIR / "wa_officials.csv"
     flags_path = DATA_DIR / "validation_flags.csv"
 
+    # Step 4: Write all five tables to SQLite.
     write_sqlite(db_path, counties, offices, officials, terms, srecs)
+    # Step 5: Export a flat analyst-friendly CSV (pre-joined view of all five tables).
     write_flat_csv(db_path, csv_path)
+    # Step 6: Write validation flags so data quality issues are visible without querying the DB.
     write_flags_csv(flags, flags_path)
 
     flag_counts = Counter(f.flag_type for f in flags)

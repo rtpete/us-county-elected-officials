@@ -1,0 +1,413 @@
+county_fips,county_name,state_abbreviation,office_type,local_title,category,seats,term_years,first_name,last_name,party,email,phone,appointment_type,term_start,term_end,first_seen_at,last_verified_at,confidence_score
+53001,Adams County,WA,Assessor,Assessor,administrative,1,4,Veronica,Rodriquez,,,(509) 659-3203,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Auditor,Auditor,administrative,1,4,Heidi,Hunt,,,(509) 659-3247,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Clerk,Clerk,administrative,1,4,Katie,Sloan,,,(509) 659-3257,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Coroner,Coroner,administrative,1,4,Tiffany,Cutfort,,,(509) 659-3219,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Treasurer,Treasurer,administrative,1,4,Kayla,Meise,,,(509) 659-3230,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Sheriff,Sheriff,executive,1,4,Dale,Wagner,,,(509) 659-1122,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Randy J.,Flyckt,,,(509) 659-3219,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53001,Adams County,WA,Commissioner,Commissioner,legislative,3,4,Dan,Blankenship,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53001,Adams County,WA,Commissioner,Commissioner,legislative,3,4,Mike,Garza,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53001,Adams County,WA,Commissioner,Commissioner,legislative,3,4,Jay,Weise,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53003,Asotin County,WA,Assessor,Assessor,administrative,1,4,Jenny,Rynearson,,,(509) 243-2016,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Auditor,Auditor,administrative,1,4,Darla,McKay,,,(509) 243-2084,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Clerk,Clerk,administrative,1,4,McKenzie,Campbell,,,(509) 243-2081,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Coroner,Coroner,administrative,1,4,Lisa,Webber,,,(509) 243-2061,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Treasurer,Treasurer,administrative,1,4,Holly,Steiner,,,(509) 243-2010,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Sheriff,Sheriff,executive,1,4,John,Hilderbrand,,,(509) 243-4717,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Curt,Liedkie,,,(509) 243-2061,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53003,Asotin County,WA,Commissioner,Commissioner,legislative,3,4,Chris,Seubert,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53003,Asotin County,WA,Commissioner,Commissioner,legislative,3,4,Brian,Shinn,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53003,Asotin County,WA,Commissioner,Commissioner,legislative,3,4,Charles (Chuck),Whitman,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53005,Benton County,WA,Assessor,Assessor,administrative,1,4,Bill,Spencer,,,(509) 735-2394,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Auditor,Auditor,administrative,1,4,Brenda,Chilton,,,(509) 736-2707,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Clerk,Clerk,administrative,1,4,Josie,Delvin,,,(509) 735-8388,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Coroner,Coroner,administrative,1,4,Bill,Leach,,,(509) 222-3720,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Treasurer,Treasurer,administrative,1,4,Kenneth,Spencer,,,(509) 786-2255,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Sheriff,Sheriff,executive,1,4,Tom,Croskrey,,,(509) 735-6555,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Eric,Eisinger,,,(509) 735-3591,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53005,Benton County,WA,Commissioner,Commissioner,legislative,3,4,Michael,Alvarez,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53005,Benton County,WA,Commissioner,Commissioner,legislative,3,4,Jerome,Delvin,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53005,Benton County,WA,Commissioner,Commissioner,legislative,3,4,Will,McKay,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53007,Chelan County,WA,Assessor,Assessor,administrative,1,4,Wes,Cornelius,,,(509) 667-6365,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Auditor,Auditor,administrative,1,4,Skip,Moore,,,(509) 667-6800,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Clerk,Clerk,administrative,1,4,Marty,Young,,,(509) 667-6380,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Coroner,Coroner,administrative,1,4,Wayne E.,Harris,,,(509) 667-6431,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Treasurer,Treasurer,administrative,1,4,David,Griffiths,,,(509) 667-6405,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Sheriff,Sheriff,executive,1,4,Michael,Morrison,,,(509) 667-6850,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Robert,Sealby,,,(509) 667-6202,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53007,Chelan County,WA,Commissioner,Commissioner,legislative,3,4,Brad,Hawkins,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53007,Chelan County,WA,Commissioner,Commissioner,legislative,3,4,Kevin,Overbay,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53007,Chelan County,WA,Commissioner,Commissioner,legislative,3,4,Shon,Smith,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53009,Clallam County,WA,Assessor,Assessor,administrative,1,4,Pamela,Rushton,,,(360) 417-2228,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Auditor,Auditor,administrative,1,4,Shoona,Riggs,,,(360) 417-2222,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Clerk,Clerk,administrative,1,4,Nikki,Botnen,,,(360) 417-2231,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Coroner,Coroner,administrative,1,4,David,Neupert,,,(360) 565-2669,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Treasurer,Treasurer,administrative,1,4,Jennifer,White,,,(360) 417-2248,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Sheriff,Sheriff,executive,1,4,Brian,King,,,(360) 417-2464,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Mark,Nichols,,,(360) 565-2611,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53009,Clallam County,WA,Commissioner,Commissioner,legislative,3,4,Mike,French,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53009,Clallam County,WA,Commissioner,Commissioner,legislative,3,4,Randy,Johnson,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53009,Clallam County,WA,Commissioner,Commissioner,legislative,3,4,Mark,Ozias,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53011,Clark County,WA,Assessor,Assessor,administrative,1,4,Peter,Van Nortwick,,,(564) 397-2391,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Auditor,Auditor,administrative,1,4,Greg,Kimsey,,,(564) 397-2241,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Clerk,Clerk,administrative,1,4,Scott,Weber,,,(564) 397-2287,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Coroner,Medical Examiner,administrative,1,4,Martha,Burt,,,(564) 397-2595,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Treasurer,Treasurer,administrative,1,4,Alishia,Topper,,,(564) 397-4452,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Sheriff,Sheriff,executive,1,4,John,Horch,,,(564) 397-2211,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Tony,Golik,,,(564) 397-2261,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53011,Clark County,WA,Commissioner,Councilor,legislative,5,4,Michelle,Belkot,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53011,Clark County,WA,Commissioner,Councilor,legislative,5,4,Wil,Fuentes,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53011,Clark County,WA,Commissioner,Councilor,legislative,5,4,Matt,Little,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53011,Clark County,WA,Commissioner,Councilor,legislative,5,4,Sue,Marshall,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53011,Clark County,WA,Commissioner,Councilor,legislative,5,4,Glen,Yung,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53013,Columbia County,WA,Assessor,Assessor,administrative,1,4,Tammy,Ketterman,,,(509) 382-2131,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Auditor,Auditor,administrative,1,4,Will,Hutchens,,,(509) 382-4541,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Clerk,Clerk,administrative,1,4,Krissy,Chapman,,,(509) 382-4321,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Coroner,Coroner,administrative,1,4,Maci,Hopwood,,,(509) 386-7214,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Treasurer,Treasurer,administrative,1,4,Carla,Rowe,,,(509) 382-2641,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Sheriff,Sheriff,executive,1,4,Joe,Helm,,,(509) 382-2518,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,C Dale,Slack,,,(509) 382-1197,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53013,Columbia County,WA,Commissioner,Commissioner,legislative,3,4,Marty,Hall,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53013,Columbia County,WA,Commissioner,Commissioner,legislative,3,4,Jack,Miller,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53013,Columbia County,WA,Commissioner,Commissioner,legislative,3,4,Ryan,Rundell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53015,Cowlitz County,WA,Assessor,Assessor,administrative,1,4,Emily,Wilcox,,,(360) 577-3010,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Auditor,Auditor,administrative,1,4,Carolyn,Fundingsland,,,(360) 442-7097,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Clerk,Clerk,administrative,1,4,Staci,Myklebust,,,(360) 577-3016,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Coroner,Coroner,administrative,1,4,Dana,Tucker,,,(360) 577-3079,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Treasurer,Treasurer,administrative,1,4,Debra,Gardner,,,(360) 577-3059 Ext. 2690,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Sheriff,Sheriff,executive,1,4,Brad,Thurman,,,(360) 577-3092,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Ryan,Jurvakainen,,,(360) 577-3080,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53015,Cowlitz County,WA,Commissioner,Commissioner,legislative,3,4,Richard,Dahl,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53015,Cowlitz County,WA,Commissioner,Commissioner,legislative,3,4,Steve,Ferrell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53015,Cowlitz County,WA,Commissioner,Commissioner,legislative,3,4,Steve,Rader,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53017,Douglas County,WA,Assessor,Assessor,administrative,1,4,Jim,Ruud,,,(509) 745-8866 Ext. 6340,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Auditor,Auditor,administrative,1,4,Thad,Duvall,,,(509) 745-8527,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Clerk,Clerk,administrative,1,4,Jenn,Biggar,,,(509) 745-8529 Ext. 6434,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Coroner,Coroner,administrative,1,4,Tanner,Bateman,,,509-888-6382,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Treasurer,Treasurer,administrative,1,4,Felisha,Rosales,,,(509) 745-8525 Ext. 6429,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Sheriff,Sheriff,executive,1,4,Kevin,Morris,,,(509) 884-0941,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Sean,Lewis,,,(509) 745-8535,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53017,Douglas County,WA,Commissioner,Commissioner,legislative,3,4,Randy,Agnew,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53017,Douglas County,WA,Commissioner,Commissioner,legislative,3,4,Marc,Straub,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53017,Douglas County,WA,Commissioner,Commissioner,legislative,3,4,Dan,Sutton,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53019,Ferry County,WA,Assessor,Assessor,administrative,1,4,Rachel,Siracuse,,,(509) 775-5225 Ext. 1126,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Auditor,Auditor,administrative,1,4,Dianna,Galvan,,,(509) 775-5225 Ext. 1137,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Clerk,Clerk,administrative,1,4,Melanie,Breezee,,,(509) 775-5225 Ext. 1143,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Treasurer,Treasurer,administrative,1,4,Shannon,Jensen,,,(509) 775-5225 Ext. 1125,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Sheriff,Sheriff,executive,1,4,Raymond,Maycumber,,,(509) 775-3136,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Michael,Golden,,,(509) 775-5225 Ext. 2506,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53019,Ferry County,WA,Commissioner,Commissioner,legislative,3,4,Robert,Dean,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53019,Ferry County,WA,Commissioner,Commissioner,legislative,3,4,Teresa,Jenkins,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53019,Ferry County,WA,Commissioner,Commissioner,legislative,3,4,Zack,Trudell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53021,Franklin County,WA,Assessor,Assessor,administrative,1,4,John,Rosenau,,,(509) 545-3506,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Auditor,Auditor,administrative,1,4,Matt,Beaton,,,(509) 545-3536,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Clerk,Clerk,administrative,1,4,Mike,Killian,,,(509) 545-3525,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Coroner,Coroner,administrative,1,4,Curtis,McGary,,,(509) 546-5812,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Treasurer,Treasurer,administrative,1,4,Josie,Koelzer,,,(509) 545-3518,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Sheriff,Sheriff,executive,1,4,Jim,Raymond,,,(509) 545-3501,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Shawn,Sant,,,(509) 545-3543,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53021,Franklin County,WA,Commissioner,Commissioner,legislative,3,4,Steve,Bauman,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53021,Franklin County,WA,Commissioner,Commissioner,legislative,3,4,Clint,Didier,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53021,Franklin County,WA,Commissioner,Commissioner,legislative,3,4,Rocky,Mullen,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53023,Garfield County,WA,Assessor,Assessor,administrative,1,4,Brian,Bartels,,,(509) 843-3631,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Auditor,Auditor,administrative,1,4,McKenzie,Lueck,,,(509) 843-1411,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Clerk,Clerk,administrative,1,4,Marie,Gormsen,,,(509) 843-3731,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Coroner,Coroner,administrative,1,4,Lisa,Webber,,,(509) 243-2061,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Treasurer,Treasurer,administrative,1,4,Tereasa,Summers,,,(509) 843-1531,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Sheriff,Sheriff,executive,1,4,Drew,Hyer,,,(509) 843-3493,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Matthew,Newberg,,,(509) 843-3082,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53023,Garfield County,WA,Commissioner,Commissioner,legislative,3,4,Justin,Dixon,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53023,Garfield County,WA,Commissioner,Commissioner,legislative,3,4,Larry,Ledgerwood,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53023,Garfield County,WA,Commissioner,Commissioner,legislative,3,4,Vonda,Mulrony,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53025,Grant County,WA,Assessor,Assessor,administrative,1,4,Melissa,McKnight,,,(509) 754-2011 Ext. 2610,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Auditor,Auditor,administrative,1,4,Michele,Jaderlund,,,(509) 754-2011 Ext. 333,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Clerk,Clerk,administrative,1,4,Kimberly,Allen,,,(509) 754-2011 Ext. 2818,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Coroner,Coroner,administrative,1,4,Craig,Morrison,,,(509) 765-7601,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Treasurer,Treasurer,administrative,1,4,Darryl,Pheasant,,,(509) 754-2011 Ext. 4253,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Sheriff,Sheriff,executive,1,4,Joe,Kriete,,,(509) 750-2710,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Kevin,McCrae,,,(509) 754-2011 Ext. 455,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53025,Grant County,WA,Commissioner,Commissioner,legislative,3,4,Kevin,Burgess,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53025,Grant County,WA,Commissioner,Commissioner,legislative,3,4,Cindy,Carter,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53025,Grant County,WA,Commissioner,Commissioner,legislative,3,4,Rob,Jones,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53027,Grays Harbor County,WA,Assessor,Assessor,administrative,1,4,Dan,Lindgren,,,(360) 964-1536,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Auditor,Auditor,administrative,1,4,Joe,MacLean,,,(360) 249-4232,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Clerk,Clerk,administrative,1,4,Kym,Foster,,,(360) 249-3842,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Coroner,Coroner,administrative,1,4,George,Kelley,,,(360) 537-6139,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Treasurer,Treasurer,administrative,1,4,Shawn,Hill,,,(360) 964-1696,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Sheriff,Sheriff,executive,1,4,Darrin,Wallace,,,(360) 249-3711,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Norma,Tillotson,,,(360) 249-3951,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53027,Grays Harbor County,WA,Commissioner,Commissioner,legislative,2,4,Rick,Hole,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53027,Grays Harbor County,WA,Commissioner,Commissioner,legislative,2,4,Georgia,Miller,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53029,Island County,WA,Assessor,Assessor,administrative,1,4,Kelly Todd,Mauck,,,(360) 678-7850,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Auditor,Auditor,administrative,1,4,Sheilah,Crider,,,(360) 679-7367,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Clerk,Clerk,administrative,1,4,Debra,Van Pelt,,,(360) 679-7360 Ext. 6,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Coroner,Coroner,administrative,1,4,Shantel,Porter,,,(360) 679-7358,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Treasurer,Treasurer,administrative,1,4,Tony,Lam,,,(360) 679-7301,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Sheriff,Sheriff,executive,1,4,Rick,Fellici,,,(360) 678-4422,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Greg,Banks,,,(360) 679-7363,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53029,Island County,WA,Commissioner,Commissioner,legislative,3,4,Melanie,Bacon,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53029,Island County,WA,Commissioner,Commissioner,legislative,3,4,Jill,Johnson,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53029,Island County,WA,Commissioner,Commissioner,legislative,3,4,Janet,St. Clair,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53031,Jefferson County,WA,Assessor,Assessor,administrative,1,4,Jeff,Chapman,,,(360) 385-9105,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Auditor,Auditor,administrative,1,4,Brenda,Huntingford,,,(360) 385-9118,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Clerk,Clerk,administrative,1,4,Amanda,Hamilton,,,(360) 385-9128,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Coroner,Coroner,administrative,1,4,David,Bradley,,,(360) 385-2642,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Treasurer,Treasurer,administrative,1,4,Stacie,Prada,,,(360) 385-9154,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Sheriff,Sheriff- Interim,executive,1,4,Andy,Pernsteiner,,,(360) 385-3831,interim,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,James,Kennedy,,,(360) 385-9180,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53031,Jefferson County,WA,Commissioner,Commissioner,legislative,3,4,Greg,Brotherton,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53031,Jefferson County,WA,Commissioner,Commissioner,legislative,3,4,Heather,Dudley-Nollette,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53031,Jefferson County,WA,Commissioner,Commissioner,legislative,3,4,Heidi,Eisenhour,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Assessor,Assessor,administrative,1,4,John,Wilson,,,(206) 296-7300,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Auditor,Director of Elections,administrative,1,4,Julie,Wise,,,(206) 477-4140,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Clerk,Clerk,administrative,1,4,Catherine,Cornwall,,,(206) 477-0777,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Coroner,Medical Examiner,administrative,1,4,Matthew,Lacy MD,,,(206) 731-3232 Ext. 4,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Treasurer,Chief Treasury Officer,administrative,1,4,Nora,Bennett,,,(206) 477-0081,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,County Executive,County Executive,executive,1,4,Girmay,Zahilay,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Sheriff,Sheriff,executive,1,4,Patti,Cole-Tindall,,,(206) 263-2555,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Leesa,Manion,,,(206) 477-1200,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Claudia,Balducci,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Jorge L.,Baron,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Rod,Dembowski,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Reagan,Dunn,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Steffanie,Fain,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Rhonda,Lewis,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Teresa,Mosqueda,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Sarah,Perry,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53033,King County,WA,Commissioner,Councilmember,legislative,9,4,Pete,von Reichbauer,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53035,Kitsap County,WA,Assessor,Assessor,administrative,1,4,Phil,Cook,,,(360) 337-7160,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Auditor,Auditor,administrative,1,4,Paul,Andrews,,,(360) 337-7118,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Clerk,Clerk,administrative,1,4,David,Lewis,,,(360) 337-7164,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Coroner,Medical Examiner,administrative,1,4,Lindsay,Harle,,,(360) 731-6843,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Treasurer,Treasurer,administrative,1,4,Peter,Boissonneau,,,(360) 337-7136,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Sheriff,Sheriff,executive,1,4,John,Gese,,,(360) 337-7145,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Chad,Enright,,,(360) 337-7174,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53035,Kitsap County,WA,Commissioner,Commissioner,legislative,3,4,Christine,Rolfes,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53035,Kitsap County,WA,Commissioner,Commissioner,legislative,3,4,Oran,Root,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53035,Kitsap County,WA,Commissioner,Commissioner,legislative,3,4,Katie,Walters,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53037,Kittitas County,WA,Assessor,Assessor,administrative,1,4,Mike,Hougardy,,,(509) 962-7501,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Auditor,Auditor,administrative,1,4,Bryan,Elliott,,,(509) 962-7504,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Clerk,Clerk,administrative,1,4,Karen,Bowen,,,(509) 962-7531,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Coroner,Acting Coroner,administrative,1,4,Cori,Cori,,,(509) 933-8200,interim,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Treasurer,Treasurer,administrative,1,4,Amy,Cziske,,,(509) 962-7535,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Sheriff,Sheriff,executive,1,4,Clay,Myers,,,(509) 962-7527,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Greg,Zempel,,,(509) 962-7520,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53037,Kittitas County,WA,Commissioner,Commissioner,legislative,3,4,Laura,Osiadacz,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53037,Kittitas County,WA,Commissioner,Commissioner,legislative,3,4,Brett,Wachsmith,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53037,Kittitas County,WA,Commissioner,Commissioner,legislative,3,4,Cory,Wright,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53039,Klickitat County,WA,Assessor,Assessor,administrative,1,4,Billi Jean,Bare,,,(509) 773-3715,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Auditor,Auditor,administrative,1,4,Heather,Jobe,,,(509) 773-4001,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Clerk,Clerk,administrative,1,4,Renea,Campbell,,,(509) 773-5744,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Coroner,Coroner,administrative,1,4,Erik,Anderson,,,(509) 773-6849,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Treasurer,Treasurer,administrative,1,4,Greg,Gallagher,,,(509) 773-4664,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Sheriff,Sheriff,executive,1,4,Bob,Songer,,,(509) 773-4455,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,David,Quesnel,,,(509) 773-5838,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53039,Klickitat County,WA,Commissioner,Commissioner,legislative,3,4,Todd,Andrews,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53039,Klickitat County,WA,Commissioner,Commissioner,legislative,3,4,Ron,Ihrig,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53039,Klickitat County,WA,Commissioner,Commissioner,legislative,3,4,Lori,Zoller,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53041,Lewis County,WA,Assessor,Assessor,administrative,1,4,Ross,Nielson,,,(360) 740-1392,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Auditor,Auditor,administrative,1,4,Larry,Grove,,,(360) 740-1156,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Clerk,Clerk,administrative,1,4,Scott,Tinney,,,(360) 740-2704,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Coroner,Coroner,administrative,1,4,Warren,McLeod,,,(360) 740-1376,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Treasurer,Treasurer,administrative,1,4,Arny,Davis,,,(360) 740-1110,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Sheriff,Sheriff,executive,1,4,Rob,Snaza,,,(360) 748-9286,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Jonathan,Meyer,,,(360) 740-1240,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53041,Lewis County,WA,Commissioner,Commissioner,legislative,3,4,Scott,Brummer,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53041,Lewis County,WA,Commissioner,Commissioner,legislative,3,4,Lindsey,Pollock,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53041,Lewis County,WA,Commissioner,Commissioner,legislative,3,4,Sean,Swope,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53043,Lincoln County,WA,Assessor,Assessor,administrative,1,4,J Scott,Liebing,,,(509) 725-7011,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Auditor,Auditor,administrative,1,4,Chandra,Schumacher,,,(509) 725-4971,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Clerk,Clerk,administrative,1,4,Traci,Gants,,,(509) 725-1401,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Coroner,Coroner,administrative,1,4,Ashley,Smith,,,(509) 725-7475,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Treasurer,Treasurer,administrative,1,4,Emily,Hansen,,,(509) 215-7938,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Sheriff,Sheriff,executive,1,4,Gabe,Gants,,,(509) 725-9263,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Ty,Albertson,,,(509) 725-4040,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53043,Lincoln County,WA,Commissioner,Commissioner,legislative,3,4,Rob,Coffman,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53043,Lincoln County,WA,Commissioner,Commissioner,legislative,3,4,Jo,Gilchrist,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53043,Lincoln County,WA,Commissioner,Commissioner,legislative,3,4,Scott,Hutsell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53045,Mason County,WA,Assessor,Assessor,administrative,1,4,Patti,McLean,,,(360) 427-9670 Ext. 498,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Auditor,Auditor,administrative,1,4,Steve,Duenkel,,,(360) 427-9670 Ext. 468,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Clerk,Clerk,administrative,1,4,Charles,Rhodes,,,(360) 427-9670 Ext. 346,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Coroner,Coroner,administrative,1,4,Jaime,Taylor,,,(360) 427-9670 Ext. 752,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Treasurer,Treasurer,administrative,1,4,Brittany,Pearson,,,(360) 427-9670 Ext. 479,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Sheriff,Sheriff,executive,1,4,Ryan,Spurling,,,(360) 427-9670 Ext. 313,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Michael,Dorcy,,,(360) 427-9670 Ext. 417,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53045,Mason County,WA,Commissioner,Commissioner,legislative,3,4,Randy,Neatherlin,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53045,Mason County,WA,Commissioner,Commissioner,legislative,3,4,Pat,Tarzwell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53045,Mason County,WA,Commissioner,Commissioner,legislative,3,4,Sharon,Trask,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53047,Okanogan County,WA,Assessor,Assessor,administrative,1,4,Larry,Gilman,,,(509) 422-7190,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Auditor,Auditor,administrative,1,4,Cari,Hall,,,(509) 422-7240,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Clerk,Clerk,administrative,1,4,Susan,Speiker,,,(509) 422-7275,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Coroner,Coroner,administrative,1,4,Dave,Rodriguez,,,(509) 422-7221,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Treasurer,Treasurer,administrative,1,4,Pam,Johnson,,,(509) 422-7180,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Sheriff,Sheriff,executive,1,4,Paul,Budrow,,,(509) 422-7183,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Albert,Lin,,,(509) 422-7280,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53047,Okanogan County,WA,Commissioner,Commissioner,legislative,3,4,Andy,Hover,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53047,Okanogan County,WA,Commissioner,Commissioner,legislative,3,4,Jon,Neal,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53047,Okanogan County,WA,Commissioner,Commissioner,legislative,3,4,Nick,Timm,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53049,Pacific County,WA,Assessor,Assessor,administrative,1,4,Bruce,Walker,,,(360) 875-9300 Ext. 2208,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Auditor,Auditor,administrative,1,4,Alex,Gerow,,,(360) 875-9309,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Clerk,Clerk,administrative,1,4,Emma,Rose,,,(360) 875-9320,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Coroner,Coroner,administrative,1,4,Eric,Anderson,,,(360) 875-9363,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Treasurer,Treasurer,administrative,1,4,Renee,Goodin,,,(360) 875-9420,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Sheriff,Sheriff,executive,1,4,Daniel,Garcia,,,(360) 875-9395,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Michael,Rothman,,,(360) 875-9361,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53049,Pacific County,WA,Commissioner,Commissioner,legislative,3,4,Jerry,Doyle,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53049,Pacific County,WA,Commissioner,Commissioner,legislative,3,4,Lisa,Olsen,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53049,Pacific County,WA,Commissioner,Commissioner,legislative,3,4,David,Tobin,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53051,Pend Oreille County,WA,Assessor,Assessor,administrative,1,4,James,McCroskey,,,(509) 447-6446,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Auditor,Auditor,administrative,1,4,Marianne,Nichols,,,(509) 447-3185,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Clerk,Clerk,administrative,1,4,Tammie,Ownbey,,,(509) 447-2435,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Treasurer,Treasurer,administrative,1,4,Nicole,Dice,,,(509) 447-6441,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Sheriff,Sheriff,executive,1,4,Glenn,Blakeslee,,,(509) 447-3151,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Dolly,Hunt,,,(509) 447-4414,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53051,Pend Oreille County,WA,Commissioner,Commissioner,legislative,3,4,John,Gentle,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53051,Pend Oreille County,WA,Commissioner,Commissioner,legislative,3,4,Robert,Rosencrantz,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53051,Pend Oreille County,WA,Commissioner,Commissioner,legislative,3,4,Brian,Smiley,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Assessor-Treasurer,Assessor-Treasurer,administrative,1,4,Marty,Campbell,,,(253) 798-7144,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,Auditor,Auditor,administrative,1,4,Linda,Farmer,,,(253) 798-3189,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,Clerk,Clerk,administrative,1,4,Constance,White,,,(253) 798-7455,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,Coroner,Medical Examiner,administrative,1,4,Karen,Cline-Parhamovich,,,(253) 798-6494,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,County Executive,County Executive,executive,1,4,Ryan,Mello,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Sheriff,Sheriff,executive,1,4,Keith,Swank,,,(253) 798-7530,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Mary,Robnett,,,(253) 798-7400,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Rosie,Ayala,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Amy,Cruver,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Robyn,Denson,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Paul,Herrera,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Jani,Hitchen,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Dave,Morell,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53053,Pierce County,WA,Commissioner,Councilmember,legislative,7,4,Bryan,Yambe,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53055,San Juan County,WA,Assessor,Assessor,administrative,1,4,John,Kulseth,,,(360) 378-2172,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Auditor,Auditor,administrative,1,4,Natasha,Warmenhoven,,,(360) 378-2161,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Clerk,Clerk,administrative,1,4,Lisa,Henderson,,,(360) 378-2163,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Coroner,Coroner,administrative,1,4,Greg,Sawyer,,,(360) 821-3725,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Treasurer,Treasurer,administrative,1,4,Rhonda,Pederson,,,(360) 378-2171,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Sheriff,Sheriff,executive,1,4,Eric,Peter,,,(360) 378-4151,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Amy,Vira,,,(360) 378-4101,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53055,San Juan County,WA,Commissioner,Councilmember,legislative,3,4,Jane,Fuller,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53055,San Juan County,WA,Commissioner,Councilmember,legislative,3,4,Kari,McVeigh,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53055,San Juan County,WA,Commissioner,Councilmember,legislative,3,4,Justin,Paulsen,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53057,Skagit County,WA,Assessor,Assessor,administrative,1,4,Danny,Hagen,,,(360) 416-1780,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Auditor,Auditor,administrative,1,4,Sandy,Perkins,,,(360) 336-9411,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Clerk,Clerk,administrative,1,4,Melissa,Beaton,,,(360) 416-1801,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Coroner,Coroner,administrative,1,4,Hayley,Thompson,,,(360) 336-9431,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Treasurer,Treasurer,administrative,1,4,Jackie,Brunson,,,(360) 416-1753,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Sheriff,Sheriff,executive,1,4,Don,McDermott,,,(360) 336-9450,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Rich,Weyrich,,,(360) 336-9460,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53057,Skagit County,WA,Commissioner,Commissioner,legislative,3,4,Peter,Browning,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53057,Skagit County,WA,Commissioner,Commissioner,legislative,3,4,Joe,Burns,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53057,Skagit County,WA,Commissioner,Commissioner,legislative,3,4,Ron,Wesen,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53059,Skamania County,WA,Assessor,Assessor,administrative,1,4,Gabe,Spencer,,,(509) 427-3721,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Auditor,Auditor,administrative,1,4,Robert,Waymire,,,(509) 427-3730,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Clerk,Clerk,administrative,1,4,Grace,Cross,,,(509) 427-3770,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Coroner,Coroner,administrative,1,4,Angie,Hollis,,,(509) 427-3718,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Treasurer,Treasurer,administrative,1,4,Vickie,Clelland,,,(509) 427-3757,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Sheriff,Sheriff,executive,1,4,Summer,Scheyer,,,(509) 427-9490,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Adam,Kick,,,(509) 427-3790,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53059,Skamania County,WA,Commissioner,Commissioner,legislative,3,4,Rob,Farris,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53059,Skamania County,WA,Commissioner,Commissioner,legislative,3,4,Asa,Leckie,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53059,Skamania County,WA,Commissioner,Commissioner,legislative,3,4,Brian,Nichols,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Assessor,Assessor,administrative,1,4,Linda,Hjelle,,,(425) 388-3678,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Auditor,Auditor,administrative,1,4,Garth,Fell,,,(425) 388-3472,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Clerk,Clerk,administrative,1,4,Heidi,Percy,,,(425) 388-3430,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Coroner,Medical Examiner,administrative,1,4,J. Daniel,Augustine,,,(425) 438-6200,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Treasurer,Treasurer,administrative,1,4,Brian,Sullivan,,,(425) 388-3366,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,County Executive,County Executive,executive,1,4,Dave,Somers,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Sheriff,Sheriff,executive,1,4,Susanna,Johnson,,,(425) 388-3393,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Jason,Cummings,,,(425) 388-7002,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53061,Snohomish County,WA,Commissioner,Councilmember,legislative,5,4,Megan,Dunn,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Commissioner,Councilmember,legislative,5,4,Sam,Low,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Commissioner,Councilmember,legislative,5,4,Jared,Mead,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Commissioner,Councilmember,legislative,5,4,Nate,Nehring,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53061,Snohomish County,WA,Commissioner,Councilmember,legislative,5,4,Strom,Peterson,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53063,Spokane County,WA,Assessor,Assessor,administrative,1,4,Tom,Konis,,,(509) 477-5732,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Auditor,Auditor,administrative,1,4,Vicky,Dalton,,,(509) 477-2217,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Clerk,Clerk,administrative,1,4,Timothy,Fitzgerald,,,(509) 477-2211,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Coroner,Medical Examiner,administrative,1,4,John,Howard,,,(509) 477-2296,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Coroner,Medical Examiner,administrative,1,4,Veena,Singh MD,,,(509) 477-2296,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Treasurer,Treasurer,administrative,1,4,Mike,Volz,,,(509) 477-4786,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Sheriff,Sheriff,executive,1,4,John,Nowels,,,(509) 477-6917,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Larry,Haskell,,,(509) 477-3662,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53063,Spokane County,WA,Commissioner,Commissioner,legislative,5,4,Al,French,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53063,Spokane County,WA,Commissioner,Commissioner,legislative,5,4,Chris,Jordan,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53063,Spokane County,WA,Commissioner,Commissioner,legislative,5,4,Josh,Kerns,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53063,Spokane County,WA,Commissioner,Commissioner,legislative,5,4,Mary,Kuney,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53063,Spokane County,WA,Commissioner,Commissioner,legislative,5,4,Amber,Waldref,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53065,Stevens County,WA,Assessor,Assessor,administrative,1,4,Rick,Johnson,,,(509) 684-6161,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Auditor,Auditor,administrative,1,4,Lori,Larsen,,,(509) 684-7511,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Clerk,Clerk,administrative,1,4,Michelle,Gagnon-Enright,,,(509) 684-7575,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Coroner,Coroner,administrative,1,4,Ramona,Colvin,,,(509) 684-0685,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Treasurer,Treasurer,administrative,1,4,Leslie,Valz,,,(509) 684-7592,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Sheriff,Sheriff,executive,1,4,Brad,Manke,,,(509) 684-5296,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Erika,George,,,(509) 684-7500,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53065,Stevens County,WA,Commissioner,Commissioner,legislative,3,4,Mark,Burrows,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53065,Stevens County,WA,Commissioner,Commissioner,legislative,3,4,Montgomery (Monty),Stobart,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53065,Stevens County,WA,Commissioner,Commissioner,legislative,3,4,Greg,Young,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53067,Thurston County,WA,Assessor,Assessor,administrative,1,4,Steven,Drew,,,(360) 867-2200,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Auditor,Auditor,administrative,1,4,Mary,Hall,,,(360) 786-5401,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Clerk,Clerk,administrative,1,4,Linda,Myhre Enlow,,,(360) 786-5434,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Coroner,Coroner,administrative,1,4,Gary,Warnock,,,(360) 867-2140,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Treasurer,Treasurer,administrative,1,4,Jeff,Gadman,,,(360) 786-5770,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Sheriff,Sheriff,executive,1,4,Derek,Sanders,,,(360) 786-5501,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Jon,Tunheim,,,(360) 786-5540,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53067,Thurston County,WA,Commissioner,Commissioner,legislative,5,4,Emily,Clouse,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53067,Thurston County,WA,Commissioner,Commissioner,legislative,5,4,Wayne,Fournier,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53067,Thurston County,WA,Commissioner,Commissioner,legislative,5,4,Rachel,Grant,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53067,Thurston County,WA,Commissioner,Commissioner,legislative,5,4,Carolina,Mejia,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53067,Thurston County,WA,Commissioner,Commissioner,legislative,5,4,Tye,Menser,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53069,Wahkiakum County,WA,Assessor,Assessor,administrative,1,4,Bill,Coons,,,(360) 795-3791,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Auditor,Auditor,administrative,1,4,Nicci,Bergseng,,,(360) 795-3219,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Clerk,Clerk,administrative,1,4,Jess,Reddon,,,(360) 795-3558,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Treasurer,Treasurer,administrative,1,4,Tammy,Peterson,,,(360) 795-8005,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Sheriff,Sheriff,executive,1,4,John,Mason,,,(360) 795-3242,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Dan,Bigelow,,,(360) 795-3652,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53069,Wahkiakum County,WA,Commissioner,Commissioner,legislative,3,4,Daniel,Cothren,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53069,Wahkiakum County,WA,Commissioner,Commissioner,legislative,3,4,Mark,Letham,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53069,Wahkiakum County,WA,Commissioner,Commissioner,legislative,3,4,Lee,Tischer,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53071,Walla Walla County,WA,Assessor,Assessor,administrative,1,4,Byron,Burres,,,(509) 524-2560,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Auditor,Auditor,administrative,1,4,Karen,Martin,,,(509) 524-2550,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Clerk,Clerk,administrative,1,4,Kathy,Martin,,,(509) 524-2780,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Coroner,Coroner,administrative,1,4,Richard,Greenwood,,,(509) 524-2845,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Treasurer,Treasurer,administrative,1,4,Gordon,Heimbigner,,,(509) 524-2751,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Sheriff,Sheriff,executive,1,4,Mark,Crider,,,(509) 524-5400,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Gabriel,Acosta,,,(509) 524-5445,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53071,Walla Walla County,WA,Commissioner,Commissioner,legislative,3,4,Bertha,Clayton,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53071,Walla Walla County,WA,Commissioner,Commissioner,legislative,3,4,Gunner,Fulmer,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53071,Walla Walla County,WA,Commissioner,Commissioner,legislative,3,4,Todd,Kimball,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Assessor,Assessor,administrative,1,4,Rebecca,Xczar,,,(360) 778-5050,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Auditor,Auditor,administrative,1,4,Stacy,Henthorn,,,(360) 778-5100,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Clerk,Clerk,administrative,1,4,Raylene,King,,,(360) 778-5560,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Coroner,Medical Examiner,administrative,1,4,Aldo,Fusaro,,,(360) 738-4557,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Treasurer,Treasurer,administrative,1,4,Steve,Oliver,,,(360) 778-5160,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,County Executive,County Executive,executive,1,4,Satpal,Sidhu,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Sheriff,Sheriff,executive,1,4,Donnell,Tanksley,,,(360) 778-6600,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Eric,Richey,,,(360) 778-5710,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Elizabeth,Boyle,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Barry,Buchanan,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Ben,Elenbaas,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Kaylee,Galloway,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Jessica,Rienstra,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Jon,Scanlon,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53073,Whatcom County,WA,Commissioner,Councilmember,legislative,7,4,Mark,Stremler,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53075,Whitman County,WA,Assessor,Assessor,administrative,1,4,Wraylee,Flodin,,,(509) 397-6220 Ext. 225,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Auditor,Auditor,administrative,1,4,Sandy,Jamison,,,(509) 397-6270,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Clerk,Clerk,administrative,1,4,Jill,Whelchel,,,(509) 397-6240,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Coroner,Coroner,administrative,1,4,Annie,Pillers,,,(509) 397-5641,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Treasurer,Treasurer,administrative,1,4,Chris,Nelson,,,(509) 397-6230,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Sheriff,Sheriff,executive,1,4,Brett,Myers,,,(509) 397-6266,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Denis,Tracy,,,(509) 397-6250,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53075,Whitman County,WA,Commissioner,Commissioner,legislative,3,4,Tom,Handy,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53075,Whitman County,WA,Commissioner,Commissioner,legislative,3,4,Arthur (Art),Swannack,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53075,Whitman County,WA,Commissioner,Commissioner,legislative,3,4,Chad,Whetzel,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53077,Yakima County,WA,Assessor,Assessor,administrative,1,4,Jacob,Tate,,,(509) 574-1100,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Auditor,Auditor,administrative,1,4,Charles,Ross,,,(509) 574-1405,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Clerk,Clerk,administrative,1,4,Billie,Maggard,,,(509) 574-1430,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Coroner,Coroner,administrative,1,4,Jim,Curtice,,,(509) 574-1610,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Treasurer,Treasurer,administrative,1,4,Ilene,Thomson,,,(509) 574-2804,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Sheriff,Sheriff,executive,1,4,Robert,Udell,,,(509) 574-2500,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Prosecuting Attorney,Prosecuting Attorney,judicial,1,4,Joe,Brusic,,,(509) 574-1210,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.85
+53077,Yakima County,WA,Commissioner,Commissioner,legislative,3,4,Kyle,Curtis,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53077,Yakima County,WA,Commissioner,Commissioner,legislative,3,4,LaDon,Linde,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
+53077,Yakima County,WA,Commissioner,Commissioner,legislative,3,4,Amanda,McKinney,,,,elected,,,2026-05-20T20:22:44.622086+00:00,2026-05-20T20:22:44.622086+00:00,0.72
