@@ -415,30 +415,56 @@ def dedupe_hash(first: str, last: str, fips: str) -> str:
     return hashlib.sha256(raw.encode()).hexdigest()[:20]
 
 
-def score_confidence(first: str, last: str, phone: str, email: str) -> float:
-    """Assign a confidence score based on data completeness only.
+def score_confidence(
+    first: str,
+    last: str,
+    phone: str,
+    email: str,
+    fips: Optional[str],
+    office_type: Optional[str],
+) -> float:
+    """Compute a confidence score from weighted validation checks.
 
-    Scores reflect whether the record has a parseable name and at least one contact
-    field. They do NOT account for source freshness, membership lag, or cross-
-    verification against a second source. The ceiling of 0.85 reflects the Tier 2
-    reliability of association membership directories vs. a primary government source.
+    Each penalty reflects how much that failure degrades the record's downstream
+    usefulness. Weights are ordered by impact: identity anchoring (name) > geographic
+    anchoring (FIPS) > schema placement (office type) > contact utility > format.
+
+    The score measures structural integrity — how many independently verifiable checks
+    the record passed — not factual accuracy. A record can score 1.0 and still be stale
+    if the source itself is out of date. Cross-source agreement is the only check that
+    addresses factual accuracy and is not computed here.
 
     Args:
         first: Parsed first name (empty string if missing).
         last: Parsed last name (empty string if missing).
         phone: Phone string from source (empty string if absent).
         email: Email string from source (empty string if absent).
+        fips: Resolved 5-digit FIPS code, or None if resolution failed.
+        office_type: Normalized office type, or None if unrecognized.
 
     Returns:
-        0.85 — full name present and at least one contact field present.
-        0.72 — full name present but no contact info (all WSAC commissioner records).
-        0.45 — name missing or unparseable; routes record to the review queue.
+        Float in [0.0, 1.0]. Penalties applied:
+          −0.35  name missing or unparseable (record unusable without identity)
+          −0.25  FIPS unresolved (record geographically unanchored)
+          −0.20  office type unrecognized (record cannot be placed in schema)
+          −0.12  no contact info (reduces usefulness; record otherwise valid)
+          −0.08  phone present but fails format check
+          −0.08  email present but fails format check
     """
-    has_name    = bool(first.strip() and last.strip())
-    has_contact = bool(phone.strip() or email.strip())
-    if not has_name:
-        return 0.45
-    return 0.85 if has_contact else 0.72
+    score = 1.0
+    if not (first.strip() and last.strip()):
+        score -= 0.35
+    if fips is None:
+        score -= 0.25
+    if office_type is None:
+        score -= 0.20
+    if not phone.strip() and not email.strip():
+        score -= 0.12
+    if phone.strip() and not _PHONE_RE.fullmatch(phone.strip()):
+        score -= 0.08
+    if email.strip() and not _EMAIL_RE.fullmatch(email.strip()):
+        score -= 0.08
+    return round(max(score, 0.0), 2)
 
 
 # ── Validation ────────────────────────────────────────────────────────────────
@@ -552,7 +578,7 @@ def build_tables(
         first, last = parse_name(raw.raw_name)
         fips        = resolve_fips(raw.county_name, name_to_fips)
         office_type, appointment_type = parse_title(raw.local_title)
-        score       = score_confidence(first, last, raw.phone, raw.email)
+        score       = score_confidence(first, last, raw.phone, raw.email, fips, office_type)
         h           = dedupe_hash(first, last, fips or "") if (first or last) else ""
 
         # Vacant seats are not officials — flag and skip to source_record only
