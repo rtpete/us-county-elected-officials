@@ -65,7 +65,7 @@ These sources were chosen because they are the most comprehensive, current, publ
 
 **Dataset completeness is not guaranteed.** Coverage depends on WACO and WSAC membership so officials who are not members may be absent. 3 of 39 counties have no coroner or medical examiner in the output; whether those positions are vacant, held by non-members, or handled through a different arrangement is unknown. The 39-county list itself is complete and authoritative (seeded from Census FIPS), but the officials within it are not exhaustive.
 
-**Confidence scores measure data completeness, not accuracy.** A score of 0.85 means the record has a full name and at least one contact field — it does not mean the person is verified to still hold office. Scores do not account for membership lag, source recency, or cross-verification against a second source. The three thresholds are: 0.85 (name + contact), 0.72 (name only), 0.45 (no parseable name).
+**Confidence scores measure structural integrity, not accuracy.** Scores are computed from six weighted checks: name parseable (−0.35 if missing), FIPS resolved (−0.25), office type recognized (−0.20), contact info present (−0.12), phone format valid (−0.08), email format valid (−0.08). A score of 1.0 means all checks passed — it does not mean the person is verified to still hold office. Scores do not account for membership lag or source recency. Records scoring below 0.70 are routed to the review queue. When the same official is confirmed by more than one source, a +0.05 boost is applied and a `CROSS_SOURCE_CONFIRMED` flag is emitted.
 
 
 #### With more time
