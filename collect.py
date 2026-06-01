@@ -570,6 +570,7 @@ def build_tables(
     srecs:     list[dict]        = []
     all_flags: list[Flag]        = []
     commissioner_counts: dict[str, int] = {}
+    official_sources: dict[str, set]    = {}   # official_id → set of source_names
 
     now_iso = fetch_time.isoformat()
 
@@ -630,10 +631,12 @@ def build_tables(
                 }
 
             if h and h in officials:
+                official_id = officials[h]["id"]
+                official_sources.setdefault(official_id, set()).add(raw.source_name)
                 term_id = str(uuid.uuid4())
                 terms.append({
                     "id":               term_id,
-                    "official_id":      officials[h]["id"],
+                    "official_id":      official_id,
                     "office_id":        offices[key]["id"],
                     "term_start":       None,
                     "term_end":         None,
@@ -676,6 +679,21 @@ def build_tables(
             ))
         else:
             seen[h] = official["id"]
+
+    # Cross-source confidence boost: when the same official is confirmed by more than
+    # one independent source, apply a small boost (+0.05) to their term's confidence.
+    # With the current two sources (WACO + WSAC), overlap is rare since they cover
+    # different office types. This becomes meaningful in production when Tier 1 APIs,
+    # Tier 2 state sites, and Tier 3 county pages all contribute to the same officials.
+    for term in terms:
+        sources = official_sources.get(term["official_id"], set())
+        if len(sources) > 1:
+            term["confidence_score"] = min(round(term["confidence_score"] + 0.05, 2), 1.0)
+            all_flags.append(Flag(
+                term["id"],
+                "CROSS_SOURCE_CONFIRMED",
+                f"confirmed by: {', '.join(sorted(sources))}",
+            ))
 
     return counties_rows, list(offices.values()), list(officials.values()), terms, srecs, all_flags
 

@@ -310,15 +310,19 @@ The four `not_found` entries are required by the prompt; they tell the pipeline 
 
 A self-reported confidence score from an LLM does not measure whether extracted data is factually correct. It measures how unambiguous the input appeared to the model — a high score reflects a clear, well-structured page, not a verified fact. Critically, LLMs can be overconfident precisely when hallucinating, because the model "felt" like it saw something clearly even when it did not.
 
-This pipeline replaces self-reported scoring with four verifiable checks:
+This pipeline replaces self-reported scoring with five verifiable checks:
 
 **1. Categorical extraction type instead of a numeric score.** `extraction_type` describes what the model did — found a value verbatim, derived it from context, encountered conflicting signals, or found nothing. This is a question the model can answer accurately about its own behavior. A numeric score is not.
 
 **2. Programmatic format validation.** After the LLM returns, format checks run independently of the model: does the phone number contain a plausible digit pattern? Does the email contain `@` and a domain? Does the name parse into at least two tokens? These checks catch malformed output regardless of how confident the model was.
 
-**3. Multi-pass consistency as a confidence signal.** For `ambiguous` records, a second extraction runs with a differently-worded prompt. If both passes return the same value, that agreement is a meaningful confidence signal — far stronger than any self-report. If they disagree, the record routes to human review.
+**3. Verbatim presence check.** For each field the model labels `explicit`, programmatically search the source markdown for the extracted value as a string. If `"Rick Scott"` does not appear in the markdown, the model's `explicit` label is wrong regardless of how confident it was. This closes a gap that `extraction_type` alone leaves open — the model can mislabel inferred or fabricated values as explicit. The deterministic scrapers in this pipeline (BeautifulSoup reading directly from table cells) are the functional equivalent of 100% verbatim verified: every extracted value is present in the source by construction.
 
-**4. Audit sampling.** A random sample of `explicit` records are verified against their source pages each run cycle. This produces a measured accuracy rate for the extraction layer over time, which is the calibration data a self-reported score never provides.
+**4. Multi-pass consistency as a confidence signal.** For `ambiguous` records, a second extraction runs with a differently-worded prompt. If both passes return the same value, that agreement is a meaningful confidence signal — far stronger than any self-report. If they disagree, the record routes to human review.
+
+**5. Cross-source agreement.** When the same official is confirmed by two independent sources, that agreement is the strongest signal available short of human review. The pipeline tracks which sources contributed to each official and applies a small confidence boost (+0.05) when more than one source confirms the same record, emitting a `CROSS_SOURCE_CONFIRMED` flag for auditability. With the current two sources (WACO and WSAC), overlap is rare since they cover different office types. This check becomes meaningful in production when Tier 1 APIs, Tier 2 state sites, and Tier 3 county pages all contribute to the same officials.
+
+**6. Audit sampling.** A random sample of `explicit` records are verified against their source pages each run cycle. This produces a measured accuracy rate for the extraction layer over time, which is the calibration data a self-reported score never provides.
 
 **Cost management:** Markdown content is trimmed to the relevant body section before sending. For counties with no useful page content, skip LLM call and log the county as `needs_manual_review`.
 
