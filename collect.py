@@ -17,6 +17,7 @@ import csv
 import hashlib
 import json
 import logging
+import re
 import sqlite3
 import time
 import uuid
@@ -442,6 +443,10 @@ def score_confidence(first: str, last: str, phone: str, email: str) -> float:
 
 # ── Validation ────────────────────────────────────────────────────────────────
 
+_PHONE_RE = re.compile(r"[\d\s\-\(\)\+\.]{7,}")
+_EMAIL_RE = re.compile(r"[^@\s]+@[^@\s]+\.[^@\s]+")
+
+
 def validate_record(
     rec: RawOfficial,
     rec_id: str,
@@ -465,7 +470,8 @@ def validate_record(
     Returns:
         List of Flag objects, one per issue detected. An empty list means the record
         passed all checks. Possible flag types: MISSING_FIRST_NAME, MISSING_LAST_NAME,
-        NO_CONTACT_INFO, UNRESOLVED_COUNTY, UNKNOWN_OFFICE_TYPE, LOW_CONFIDENCE.
+        NO_CONTACT_INFO, UNRESOLVED_COUNTY, UNKNOWN_OFFICE_TYPE, LOW_CONFIDENCE,
+        SUSPECT_PHONE_FORMAT, SUSPECT_EMAIL_FORMAT.
     """
     flags: list[Flag] = []
     if not first.strip():
@@ -475,6 +481,10 @@ def validate_record(
     if not rec.phone.strip() and not rec.email.strip():
         flags.append(Flag(rec_id, "NO_CONTACT_INFO",
                           f"{rec.raw_name} | {rec.local_title} | {rec.county_name}"))
+    if rec.phone.strip() and not _PHONE_RE.fullmatch(rec.phone.strip()):
+        flags.append(Flag(rec_id, "SUSPECT_PHONE_FORMAT", rec.phone))
+    if rec.email.strip() and not _EMAIL_RE.fullmatch(rec.email.strip()):
+        flags.append(Flag(rec_id, "SUSPECT_EMAIL_FORMAT", rec.email))
     if fips is None:
         flags.append(Flag(rec_id, "UNRESOLVED_COUNTY", rec.county_name))
     if office_type is None:

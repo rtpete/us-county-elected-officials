@@ -137,6 +137,8 @@ If the automated solution fails for a given county, we can fall back to historic
 
 - **Manual Research and Outreach**: Analog collection methods could be leveraged for any counties which cannot have their data populated through other means. Collection methods include searching local newspapers or reaching out to county offices via phone or email. If manual outreach is performed, attempts should be made to find out term limits and establish a timeframe for necessary manual data refresh in the future. Additionally, requests could be made to have that local government website updated.
 
+- **LLM Seed Query**: As a last resort when all other sources fail for a given county, an LLM can be queried directly for known officials. This is the least reliable option: LLMs have a training data cutoff, coverage of small rural counties is thin, and the model will produce a plausible-sounding answer even when it does not have reliable data. Records produced this way must be written to `source_records` with `source_type: "llm"`, `llm_extracted: true`, and `reliability_tier: 3`, and routed directly to the review queue before writing to `terms`. They should be treated as unverified seeds — useful for knowing where to look, not as confirmed data. The goal is to surface a record that a human reviewer or a future automated run can confirm or reject, rather than leaving the county silently absent from the dataset.
+
 ### Source Evaluation Criteria
 
 Applied in priority order when choosing which source to trust for a given local government office:
@@ -155,7 +157,7 @@ Applied in priority order when choosing which source to trust for a given local 
 
 Creating and maintaining web scrapers for 3,143 different county websites is a daunting task. Each HTML page differs enough from another that thousands of bespoke parsing solutions would be required for successful data retrieval. The combination of a unified scraper and an LLM eliminates that problem entirely.
 
-LLMs are not used for Tier 1 sources — those are structured API calls that return JSON directly. For Tier 2 and Tier 3 web sources, **Firecrawl** solves the *fetching* problem: it converts any URL to clean markdown, handling JavaScript-rendered pages and PDFs without per-site configuration. The **LLM** then solves the *parsing variability* problem: it reads whatever markdown Firecrawl returns and extracts structured data regardless of how each site is laid out, with no bespoke parsing rules required. Together they replace what would otherwise be thousands of site-specific scrapers. **Crawl4AI** is an open-source self-hosted alternative to Firecrawl if avoiding external API costs is a priority.
+LLMs are not used for Tier 1 sources — those are structured API calls that return JSON directly. For Tier 2 and Tier 3 web sources, **Firecrawl** solves the *fetching* problem: it converts any URL to clean markdown, handling JavaScript-rendered pages, PDFs, and other document types without per-site configuration. County sites frequently link directly to PDF rosters; Firecrawl auto-detects and parses these from the URL transparently, requiring no special handling. The **LLM** then solves the *parsing variability* problem: it reads whatever markdown Firecrawl returns and extracts structured data regardless of how each site is laid out, with no bespoke parsing rules required. Together they replace what would otherwise be thousands of site-specific scrapers. For county-scale runs, Firecrawl's `batch_scrape` endpoint accepts a list of URLs and processes them in parallel, returning results asynchronously — considerably faster than sequential per-county fetches at production scale (3,143 counties). **Crawl4AI** is an open-source self-hosted alternative to Firecrawl if avoiding external API costs is a priority.
 
 ### Pipeline Overview
 
@@ -165,7 +167,7 @@ LLMs are not used for Tier 1 sources — those are structured API calls that ret
           v
 [Collector Layer]
   |-- API Collectors        (Google Civic, Ballotpedia, VoteSmart)
-  |-- Firecrawl Scraper     (Tier 2 state sites + Tier 3 county sites) --> [LLM Extraction]
+  |-- Firecrawl Scraper     (Tier 2 state sites + Tier 3 county sites) --> [LLM Extraction] --> [Post-Extraction Validation]
   |-- Spreadsheet Ingestors --> [Office Normalization]
   |-- Manual Entry
           |
@@ -197,9 +199,9 @@ LLMs are not used for Tier 1 sources — those are structured API calls that ret
 
 Applied to Tier 2 state sites and Tier 3 county websites. **Claude** (via the Anthropic API) is the recommended model for extraction given its strong performance on structured output tasks. Firecrawl fetches the target URL and converts it to clean markdown before the extraction prompt is sent, reducing token cost and handling JavaScript rendering automatically.
 
-**Input:** Markdown converted from the target page + county name + state + list of expected office types for that county type.
+**Input:** Firecrawl fetches the target URL and returns the page's main content as clean markdown — navigation, scripts, and boilerplate stripped; HTML tables converted to markdown tables. The `markdown` field from the Firecrawl response is passed to the LLM along with county name, state, and the list of expected office types.
 
-**Prompt instructs the model to return:**
+**Prompt schema — what the model is instructed to return:**
 ```json
 {
   "officials": [
@@ -209,23 +211,118 @@ Applied to Tier 2 state sites and Tier 3 county websites. **Claude** (via the An
       "party": "Democrat",
       "email": "jsmith@countygov.example",
       "phone": "555-123-4567",
+      "extraction_type": "explicit",
       "social_media_urls": ["https://x.com/jsmith_sheriff"],
       "term_start": "2023-01-01",
       "term_end": null
     }
   ],
-  "confidence": 0.85,
   "notes": "Page lists 3 officials; party affiliation not shown for 2 of them"
 }
 ```
 
+`extraction_type` is a per-record categorical field with four allowed values:
+- `explicit` — the value appeared verbatim on the page
+- `inferred` — the value was derived from context (e.g. party inferred from an endorsement mention)
+- `ambiguous` — the page contained conflicting or unclear signals
+- `not_found` — the expected field was absent from the page entirely
+
+**End-to-end example**
+
+*Firecrawl `markdown` output:*
+```markdown
+# Grays Harbor County — Elected Officials
+
+**Sheriff:** Rick Scott — (360) 249-3711
+**Prosecuting Attorney:** Katie Svoboda — katie.svoboda@co.grays-harbor.wa.us
+Re-elected November 2022 on the Democratic ticket.
+
+| District | Commissioner | Phone |
+|---|---|---|
+| 1 | Vickie Raines | (360) 249-4222 |
+| 2 | Jill Warne | (360) 249-4222 |
+
+*Auditor, Assessor, Treasurer, and Clerk are listed on the Departments page.*
+```
+
+*Prompt (user message — sent after a system message instructing the model to return only valid JSON):*
+```
+County: Grays Harbor County, WA
+Expected offices: Sheriff, Auditor, Assessor, Clerk, Treasurer, Prosecuting Attorney, Commissioner
+
+Extract each official. Per record, set extraction_type to:
+  "explicit"   — value appeared verbatim
+  "inferred"   — derived from context (explain in notes)
+  "ambiguous"  — conflicting signals
+  "not_found"  — field absent from page
+
+Include a not_found entry for every expected office not present on the page.
+
+[firecrawl markdown pasted here]
+```
+
+*Expected response:*
+```json
+{
+  "officials": [
+    {
+      "name": "Rick Scott", "title": "Sheriff",
+      "party": null, "email": null, "phone": "(360) 249-3711",
+      "term_start": null, "term_end": null, "extraction_type": "explicit"
+    },
+    {
+      "name": "Katie Svoboda", "title": "Prosecuting Attorney",
+      "party": "Democrat", "email": "katie.svoboda@co.grays-harbor.wa.us", "phone": null,
+      "term_start": null, "term_end": null, "extraction_type": "inferred"
+    },
+    {
+      "name": "Vickie Raines", "title": "Commissioner",
+      "party": null, "email": null, "phone": "(360) 249-4222",
+      "term_start": null, "term_end": null, "extraction_type": "explicit"
+    },
+    {
+      "name": "Jill Warne", "title": "Commissioner",
+      "party": null, "email": null, "phone": "(360) 249-4222",
+      "term_start": null, "term_end": null, "extraction_type": "explicit"
+    },
+    { "name": null, "title": "Auditor", "extraction_type": "not_found" },
+    { "name": null, "title": "Assessor", "extraction_type": "not_found" },
+    { "name": null, "title": "Treasurer", "extraction_type": "not_found" },
+    { "name": null, "title": "Clerk", "extraction_type": "not_found" }
+  ],
+  "notes": "Svoboda party inferred from 'Re-elected November 2022 on the Democratic ticket.' Auditor, Assessor, Treasurer, Clerk not on this page — referenced as being on the Departments page."
+}
+```
+
+The four `not_found` entries are required by the prompt; they tell the pipeline exactly which offices to look for on the Departments page. The `notes` field carries context that a numeric confidence score would have obscured.
+
 **Output handling:**
 - Full LLM response stored in `source_records.raw_data` with `llm_extracted = true`
-- `confidence` from LLM response maps to `source_records.confidence_score`
-- Records below 0.7 confidence route to human review before writing to `terms`
+- Per-record `extraction_type` replaces a global confidence score — the model reports what it did, not how it felt about it
+- Post-extraction format validation runs programmatically before writing to `source_records`: phone pattern check, email format check, name plausibility
+- `explicit` records with passing format checks write directly to `terms`
+- `inferred` records write to `terms` but are flagged for audit
+- `ambiguous` records trigger a second-pass extraction with a differently-worded prompt; agreement between passes clears the flag; disagreement routes to human review
+- `not_found` records are written to `source_records` only and logged as coverage gaps
 - The markdown content and full LLM response are stored in `raw_data` so the extraction can be rerun with an improved prompt without re-fetching
 
+### Confidence and Verification
+
+A self-reported confidence score from an LLM does not measure whether extracted data is factually correct. It measures how unambiguous the input appeared to the model — a high score reflects a clear, well-structured page, not a verified fact. Critically, LLMs can be overconfident precisely when hallucinating, because the model "felt" like it saw something clearly even when it did not.
+
+This pipeline replaces self-reported scoring with four verifiable checks:
+
+**1. Categorical extraction type instead of a numeric score.** `extraction_type` describes what the model did — found a value verbatim, derived it from context, encountered conflicting signals, or found nothing. This is a question the model can answer accurately about its own behavior. A numeric score is not.
+
+**2. Programmatic format validation.** After the LLM returns, format checks run independently of the model: does the phone number contain a plausible digit pattern? Does the email contain `@` and a domain? Does the name parse into at least two tokens? These checks catch malformed output regardless of how confident the model was.
+
+**3. Multi-pass consistency as a confidence signal.** For `ambiguous` records, a second extraction runs with a differently-worded prompt. If both passes return the same value, that agreement is a meaningful confidence signal — far stronger than any self-report. If they disagree, the record routes to human review.
+
+**4. Audit sampling.** A random sample of `explicit` records are verified against their source pages each run cycle. This produces a measured accuracy rate for the extraction layer over time, which is the calibration data a self-reported score never provides.
+
 **Cost management:** Markdown content is trimmed to the relevant body section before sending. For counties with no useful page content, skip LLM call and log the county as `needs_manual_review`.
+
+**Design tradeoff — Firecrawl JSON mode vs. markdown + Claude:** Firecrawl offers a built-in JSON extraction mode that accepts a schema and prompt and returns structured data directly, removing the separate Claude API call. It is not used here for four reasons. First, it requires relinquishing control over the model and prompt, making `extraction_type` classification and multi-pass consistency checking impossible — the two mechanisms that replace self-reported confidence scores. Second, the raw markdown is not returned unless explicitly requested alongside JSON, which means losing the intermediate state stored in `source_records.raw_data` for re-processing without re-fetching. Third, Firecrawl's internal model is undocumented and subject to change, introducing silent data quality risk across monthly refresh runs. Fourth, JSON mode costs 5 credits per page (1 base + 4 additional) versus 1 credit for markdown plus Claude API token costs, which favors the two-step approach at scale. JSON mode is appropriate for lightweight, one-off extractions where auditability is not required.
 
 
 ### Pipeline Technology
@@ -244,9 +341,11 @@ County-level officeholders serve 2–4 year terms, so most records go months wit
 | Tier 4 — Historical spreadsheets | One-time ingest | On discovery |
 | Tier 4 — Manual entries | As needed | Human |
 
+**Firecrawl caching and `maxAge`:** Firecrawl caches scraped pages for 2 days by default and serves cached results at the same credit cost. Routine monthly refreshes should use the default cache window — identical pages return faster with no extra cost. Post-election targeted re-collection runs must set `maxAge=0` to force a fresh fetch, since a cached page from before the election would silently return stale data. The election calendar trigger is the only place in this pipeline where `maxAge=0` is the correct setting.
+
 ### Election Calendar Integration
 
-A `county_election_dates` lookup (maintainable separately, sourced from Ballotpedia or state election boards) drives targeted re-collection. Two to four weeks after a certification date, the pipeline re-scrapes the relevant county and state sources, re-runs LLM extraction if needed, and compares to the prior snapshot. This keeps freshness high in the post-election window without burning API quota on counties in the middle of a four-year term.
+A `county_election_dates` lookup (maintainable separately, sourced from Ballotpedia or state election boards) drives targeted re-collection. Two to four weeks after a certification date, the pipeline re-scrapes the relevant county and state sources with `maxAge=0`, re-runs LLM extraction if needed, and compares to the prior snapshot. This keeps freshness high in the post-election window without burning API quota on counties in the middle of a four-year term.
 
 ---
 
