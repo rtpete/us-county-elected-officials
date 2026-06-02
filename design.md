@@ -98,7 +98,7 @@ A person who has held offices in multiple counties will have multiple `terms` ro
 | `source_type` | TEXT | `api`, `scrape`, `llm`, `spreadsheet`, `manual` |
 | `source_url` | TEXT | Specific URL fetched or file path; nullable for manual entries |
 | `reliability_tier` | SMALLINT | 1 (highest) to 3 (lowest); manual = 0 (unverified) |
-| `raw_data` | JSONB | Full original payload — API JSON response, scraped markdown content, LLM output, spreadsheet row |
+| `raw_data` | JSONB | Full original payload — API JSON response, scraped markdown content, spreadsheet row. For LLM-extracted records, stores source markdown + prompt + LLM response together so extraction can be rerun with an improved prompt without re-fetching |
 | `confidence_score` | NUMERIC(3,2) | Source-level confidence; feeds `terms.confidence_score` |
 | `llm_extracted` | BOOLEAN | True when LLM was used to parse the raw content |
 | `fetched_at` | TIMESTAMPTZ | When this record was collected |
@@ -304,7 +304,14 @@ The four `not_found` entries are required by the prompt; they tell the pipeline 
 - `inferred` records write to `terms` but are flagged for audit
 - `ambiguous` records trigger a second-pass extraction with a differently-worded prompt; agreement between passes clears the flag; disagreement routes to human review
 - `not_found` records are written to `source_records` only and logged as coverage gaps
-- The markdown content and full LLM response are stored in `raw_data` so the extraction can be rerun with an improved prompt without re-fetching
+- The markdown content, prompt, and full LLM response are all stored in `raw_data` so the extraction can be rerun with an improved prompt without re-fetching. Storing the prompt alongside the output means you can diff prompt versions when re-extracting and understand exactly what changed. The `raw_data` structure for an LLM-extracted record:
+```json
+{
+  "source_markdown": "# Grays Harbor County — Elected Officials\n\n**Sheriff:** Rick Scott...",
+  "prompt": "County: Grays Harbor County, WA\nExpected offices: Sheriff, Auditor...",
+  "llm_response": { "officials": [...], "notes": "..." }
+}
+```
 
 ### Confidence and Verification
 
